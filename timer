@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SECONDS=$1
+LIMIT=$((${SECONDS}-1))
+C_GREEN='\033[32m'
+C_YELLOW='\033[33m'
+C_END='\033[0m'
+for i in `seq 0 ${LIMIT}`
+do
+  echo "${C_GREEN}$((${LIMIT}-${i}+1))${C_END} \c"
+  sleep 1
+done
+echo ""
+echo "${C_YELLOW}Finished at `date`.${C_END}"
